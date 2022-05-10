@@ -1,0 +1,10 @@
+--- 
+- 
+  become: true
+  hosts: all
+  name: "Stop and remove apache"
+  tasks: 
+    - name: "Remove httpd"
+      yum: 
+        name: httpd
+        state: absent
