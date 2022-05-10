@@ -8,10 +8,6 @@
       yum: 
         name: httpd
         state: latest
-    - name: "latest index.html file is present"
-      template: 
-        dest: /var/www/html/
-        src: files/index.html
     - name: "httpd is started"
       service: 
         name: httpd
