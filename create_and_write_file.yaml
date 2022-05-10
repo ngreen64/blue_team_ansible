@@ -5,16 +5,16 @@
   
   - name: Ensure the directory exists
     file:
-      path: /var/tmp/'{{ file_path }}'
+      path: /var/tmp/{{ file_path }}
       state: directory
       
   - name: Creating an empty file
     file:
-      path: /var/tmp/'{{ file_path }}'/'{{ file_name }}'
+      path: /var/tmp/{{ file_path }}/{{ file_name }}
       state: touch
       
   - name: Add some content to the file
     lineinfile:
-      path: /var/tmp/'{{ file_path }}'/'{{ file_name }}'
-      line: '{{ file_content }}'
+      path: /var/tmp/{{ file_path }}/{{ file_name }}
+      line: {{ file_content }}
       state: present
