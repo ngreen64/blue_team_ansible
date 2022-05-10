@@ -2,6 +2,12 @@
 - hosts: all
   
   tasks:
+  
+  - name: Ensure the directory exists
+    file:
+      path: /var/tmp/'{{ file_path }}'
+      state: directory
+      
   - name: Creating an empty file
     file:
       path: /var/tmp/'{{ file_path }}'/'{{ file_name }}'
