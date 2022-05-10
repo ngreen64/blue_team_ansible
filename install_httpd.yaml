@@ -8,6 +8,8 @@
       yum: 
         name: httpd
         state: latest
+    - name: Make certain httpd listens on a free port
+      lineinfile: dest=/etc/httpd/conf/httpd.conf regexp="^Listen 80" line="Listen 81" state=present
     - name: "httpd is started"
       service: 
         name: httpd
