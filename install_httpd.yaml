@@ -1,7 +1,7 @@
 --- 
 - 
   become: true
-  hosts: web
+  hosts: all
   name: "install and start apache"
   tasks: 
     - 
